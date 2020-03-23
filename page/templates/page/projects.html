@@ -1,0 +1,35 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="container-fluid p-0">
+    <div class="site-content-projects">
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column">
+                <h1 class="site-title">{{projects.0.title}}</h1>
+                <p class="site-desc">{{projects.0.subtitle}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+</br>
+<section class="gallery-block cards-gallery">
+    <div class="container">
+    <div class="heading">
+        <h2>{{projects.0.gallerytitle}}</h2>
+    </div>
+</br></br>
+    <div class="row">
+        {%if gallery%}
+        <div class="col-md-6 col-lg-4">
+            <div class="card border-0 transform-on-hover">
+                <a class="lightbox" href="../media/{{gallery.image }}" class="lightbox"><img src="../media/{{gallery.image}}" class="card-img-top"></a>
+            </div>
+        </div>
+        {%else%}
+        <div class="col-md-6 col-lg-4"></div>
+        <li><em>No Content Available</em></li>
+        </div>
+        {%endif%}
+    </div>
+
+</div>
+{%endblock%}

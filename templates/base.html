@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+    AH SurfacePrep
+    </title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static "/css/style.css" %}" rel="stylesheet">
+    <link rel="icon" href="logo.jpeg" />
+</head> 
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <a class="AH" href="#" class="navbar-brand ml-3">AH SurfacePrep</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu"
+            aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle Navigation" >
+        <span class="navbar-toggler-icon"></span>
+
+        </button>
+        <div class="collapse navbar-collapse"></div>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="{% url 'homeindex' %}" class="nav-link">{{navbar.0.navbaritem}}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'aboutusindex' %}" class="nav-link">{{navbar.1.navbaritem}}</a>
+                </li>   
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">{{navbar.2.navbaritem}}</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {%if services%}
+                        <a class="dropdown-item" href="epoxy.html">{{servicesitem.0.navbaritem}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="polish.html">{{servicesitem.1.navbaritem}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="terrace">{{servicesitem.2.navbaritem}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="stain.html">{{servicesitem.3.navbaritem}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="acrylic.html">{{servicesitem.4.navbaritem}}</a>
+                        {%else%}
+                        <a class="dropdown-item" href="#"><em>No Content Available</em></a> 
+                        {%endif%}
+                    </div>
+    
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'projectsindex' %}" class="nav-link">{{navbar.3.navbaritem}}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'contactusindex' %}" class="nav-link">{{navbar.4.navbaritem}}</a>
+                </li> 
+            </ul>
+           
+        </div>
+
+        </nav>
+    </header>
+    <main>
+        {%block content%}
+        {%endblock%}
+    </main>
+    
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-12">
+                <h2>{{footer.0.title}}</h2>
+            </div>
+            <div class="col-12 social padding">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a> 
+                                <a href="#"><i class="fab fa-youtube"></i></a>   
+            </div>
+        </div>
+    </div>
+
+</br></br>
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center padding">
+                <div class="col-12">
+                    <img src="../media/{{ footer.0.logo }}"  class= "logo" alt="logo ">
+                    <hr class="light">
+                    <p>{{footer.0.number}}</p>
+                    <p>{{footer.0.email}}</p>
+                    <p>{{footer.0.direction}}</p>
+                    <p>{{footer.0.city}}</p>
+                </div>
+            
+            <div class="col-12">
+                <hr class="light">
+                <div class="h5">&copy AHSURFACEPREP </div>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    window.sr=ScrollReveal({duration: 1000});
+    sr.reveal('.site-content .d-flex');
+    sr.reveal('.section-1 .card');
+    sr.reveal('.section-2 .d-flex');
+    sr.reveal('.col-12');
+
+</script>
+</body>
+</html>
